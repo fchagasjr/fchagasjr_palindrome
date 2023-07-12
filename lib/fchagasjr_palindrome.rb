@@ -1,8 +1,6 @@
-# frozen_string_literal: true
-
 require_relative "fchagasjr_palindrome/version"
 
-class String
+module FchagasjrPalindrome
   def palindrome?
     processed_content == processed_content.reverse
   end
@@ -10,6 +8,14 @@ class String
   private
 
   def processed_content
-    scan(/[a-z0-9]/i).join.downcase
+    to_s.scan(/[a-z0-9]/i).join.downcase
   end
+end
+
+class String
+  include FchagasjrPalindrome
+end
+
+class Integer
+  include FchagasjrPalindrome
 end
