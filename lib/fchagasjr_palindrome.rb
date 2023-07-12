@@ -7,13 +7,9 @@ class String
     processed_content == processed_content.reverse
   end
 
-  def letters
-    self.scan(/[a-zA-Z0-9]/).join
-  end
-
   private
 
   def processed_content
-    self.letters.downcase
+    scan(/[a-z0-9]/i).join.downcase
   end
 end
