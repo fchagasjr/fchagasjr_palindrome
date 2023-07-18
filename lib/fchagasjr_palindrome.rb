@@ -2,6 +2,7 @@ require_relative "fchagasjr_palindrome/version"
 
 module FchagasjrPalindrome
   def palindrome?
+    return false if processed_content.empty?
     processed_content == processed_content.reverse
   end
 
